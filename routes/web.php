@@ -66,6 +66,14 @@ Route::get('/manage/contracts', function () {
     return Inertia::render('Contracts/manageContracts');
 })->middleware(['auth', 'verified', 'role:admin,Owner'])->name('manageContracts');
 
+Route::get('/solicitudes/evaluar', function () {
+    return Inertia::render('Contracts/EvaluateRequest');
+})/*->middleware(['auth', 'verified', 'role:admin,Owner'])*/->name('EvaluateRequest');
+
+Route::get('/solicitudes/seguimiento', function () {
+    return Inertia::render('Contracts/TrackRequest');
+})/*->middleware(['auth', 'verified', 'role:admin,Owner'])*/->name('TrackRequest');
+
 //appoinments
 Route::get('/appoinments', function () {
     return Inertia::render('Appoinments');

@@ -13,6 +13,8 @@ import DashboardLayout from '@/Layouts/DashboardLayout.vue';
               <div class="card-header">Estado Actual</div>
               <div class="card-body">
                 <p><strong>Estado:</strong> Pendiente</p>
+                <p><strong>Propiedad:</strong> Casa en Ciudad Jardín</p>
+                <p><strong>Última Actualización:</strong> 2024-11-18</p>
               </div>
             </div>
             <div class="mt-3">
@@ -25,6 +27,11 @@ import DashboardLayout from '@/Layouts/DashboardLayout.vue';
                 >
                   <strong>{{ notificacion.titulo }}</strong> - {{ notificacion.mensaje }}
                   <span class="text-muted">({{ notificacion.fecha }})</span>
+                  <div>
+                    <small><strong>Propiedad asociada:</strong> {{ notificacion.propiedad }}</small>
+                    <br />
+                    <small><strong>Prioridad:</strong> {{ notificacion.prioridad }}</small>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -45,12 +52,16 @@ export default {
           titulo: "Notificación 1",
           mensaje: "Tu solicitud está en proceso.",
           fecha: "2024-11-18",
+          propiedad: "Casa en Ciudad Jardín",
+          prioridad: "Alta",
         },
         {
           id: 2,
           titulo: "Notificación 2",
           mensaje: "Tu solicitud ha sido aprobada.",
           fecha: "2024-11-19",
+          propiedad: "Apartamento en Vista Real",
+          prioridad: "Media",
         },
       ],
     };
@@ -91,4 +102,4 @@ export default {
   font-size: 0.8rem;
   color: #999;
 }
-</style> 
+</style>
